@@ -82,7 +82,7 @@ saleor-core:
   image:
     repository: ghcr.io/eirenauts/saleor-core
     pullPolicy: IfNotPresent
-    tag: "0.0.11"
+    tag: ""
   initImage:
     repository: ghcr.io/eirenauts/saleor-core
     pullPolicy: IfNotPresent
@@ -258,8 +258,7 @@ saleor-dashboard:
 #      - secretName: saleor-dashboard-tls-key
 #        hosts:
 #          - "{{ dashboard_hostname }}"
-  dashUrl: "https://saleor-k8s-dev-saleor-dashboard.hack.cloudnative.nttdatauk.cloud/dashboard/"
+  dashUrl: "https://saleor-k8s-1-saleor-dashboard.hack.cloudnative.nttdatauk.cloud/dashboard/"
   staticUrl: "https://nttdatauk-dea-saleor-images.s3.eu-west-2.amazonaws.com/eu-west-2/"
   apiUrl: "https://saleor-k8s-1-saleor-core-api.hack.cloudnative.nttdatauk.cloud/graphql/"
   apiMountUri: "/dashboard/"
-
