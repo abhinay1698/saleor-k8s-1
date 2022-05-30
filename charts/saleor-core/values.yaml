@@ -196,7 +196,7 @@ containerSecurityContext:
 #    readOnlyRootFilesystem: true
 
 service:
-  type: ClusterIP
+  type: NodePort
   port: 80
 
 ingress:
@@ -215,20 +215,20 @@ ingress:
 
 ## Note:
 ## If not using cloudstorage as a backend for media and static assets
-## persistence.enabled must be set to true for a functional system
+## ence.enabled must be set to true for a functional system
 ## persistence.accessModes should be set to ReadWriteMany to support multiple replicas
 ## to allow for access to a central shared volume by multiple pods
 
 persistence:
   enabled: true
-  accessMode: ReadWriteMany
+  accessMode: ReadWriteOnce
   size: 8Gi
   volumeMode: Filesystem
   # Uncomment storageClass: "" to disable dynamic provisioning
-  # storageClass: ""
+  storageClass: azurefile-csi
   # To use an existing PVC rather than have it provisioned by this chart,
   # uncomment and enter below
-  existingPvc:
+  # existingPvc: azurefile-pvc
 
 ## Configuration Settings
 
