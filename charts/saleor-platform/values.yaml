@@ -7,7 +7,7 @@
 postgresql:
   enabled: true
   persistence:
-    existingClaim: azurefile-pgdata-pvc
+    existingClaim: azuredisk-pgdata-pvc
   volumePermissions:
     enabled: true
   image:
