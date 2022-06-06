@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: azuredisk-pgdata-pvc
+  name: pv-azuredisk
 spec:
   accessModes:
     - ReadWriteOnce
