@@ -4,7 +4,7 @@ metadata:
   name: azuredisk-pgdata-pvc
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   storageClassName: managed-csi
   resources:
     requests:
