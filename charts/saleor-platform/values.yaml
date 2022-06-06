@@ -168,7 +168,7 @@ saleor-core:
     redis:
       # Leave empty in `values.yaml` for security reasons, set in a secret
       password: "test"
-      host: "saleor-k8s-1-redis-master.saleor-k8s-1"
+      host: "saleor-k8s-2-redis-master"
       # tls true => use redis in url instead of redis
       tls: false
       port: 6379
@@ -180,7 +180,7 @@ saleor-core:
       # Leave empty in `values.yaml` for security reasons, set in a secret
       password: "dpkvvVpy5ZaSB2CP"
       user: "postgres"
-      host: "saleor-k8s-1-postgresql.saleor-k8s-1"
+      host: "saleor-k8s-2-postgresql"
       port: 5432
       database: saleor-db
       requireSSL: false
@@ -211,7 +211,7 @@ saleor-core:
 
     # Use nginx server for /static and /media assets instead of cloudstorage
     cloudStorage:
-      enabled: true
+      enabled: false
 
     # Enable Vatlayer API to fetch taxes for different classes of items
     vatLayer:
@@ -232,7 +232,7 @@ saleor-storefront:
 
 saleor-dashboard:
   enabled: true
-  environment: 1
+  environment: 2
   replicaCount: 1
   autoscaling:
     enabled: false
@@ -258,7 +258,7 @@ saleor-dashboard:
 #      - secretName: saleor-dashboard-tls-key
 #        hosts:
 #          - "{{ dashboard_hostname }}"
-  dashUrl: "https://saleor-k8s-1-saleor-dashboard.hack.cloudnative.nttdatauk.cloud/dashboard/"
+  dashUrl: "https://saleor-k8s-2-saleor-dashboard.hack.cloudnative.nttdatauk.cloud/dashboard/"
   staticUrl: "https://nttdatauk-dea-saleor-images.s3.eu-west-2.amazonaws.com/eu-west-2/"
-  apiUrl: "https://saleor-k8s-1-saleor-core-api.hack.cloudnative.nttdatauk.cloud/graphql/"
+  apiUrl: "https://saleor-k8s-2-saleor-core-api.hack.cloudnative.nttdatauk.cloud/graphql/"
   apiMountUri: "/dashboard/"
